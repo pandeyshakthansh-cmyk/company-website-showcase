@@ -7,7 +7,7 @@ function safeEqual(a: string, b: string) {
 }
 
 function checkPassword(pw: string) {
-  const expected = process.env.ADMIN_PASSWORD;
+  const expected = process.env["ADMIN_PASSWORD"];
   if (!expected) throw new Error("Admin password not configured");
   return safeEqual(pw, expected);
 }
