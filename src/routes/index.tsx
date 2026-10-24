@@ -79,9 +79,9 @@ function Index() {
     });
   };
 
-  const order = () => {
-    if (!cart.length) return toast.error("Your cart is empty");
-    if (!form.name || !form.phone || !form.address || !form.pincode) return toast.error("Please fill your details before placing the order.");
+  const order = (): void => {
+    if (!cart.length) { toast.error("Your cart is empty"); return; }
+    if (!form.name || !form.phone || !form.address || !form.pincode) { toast.error("Please fill your details before placing the order."); return; }
     const lines = cart.map((i) => `• ${i.name} (${i.local}) ${i.size} — ₹${i.price} × ${i.qty} = ₹${i.price * i.qty}`).join("\n");
     const msg = `🛒 *New Order — GreenBasketFresh*\n\n${lines}\n\n*Total: ₹${total}*\n\n👤 ${form.name}\n📞 ${form.phone}\n📍 ${form.address}\n🔢 ${form.pincode}`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
