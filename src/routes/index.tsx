@@ -220,7 +220,7 @@ function Index() {
 
 function ProductCard({ p, onAdd }: { p: Product; onAdd: (p: Product, o: Opt) => void }) {
   const [sel, setSel] = useState(0);
-  const o = p.options[sel];
+  const o = p.options[sel] ?? p.options[0]!;
   return (
     <div className="flex gap-4 rounded-3xl border border-border bg-card p-3">
       <img src={p.img} alt={p.name} loading="lazy" width={816} height={816} className="size-28 shrink-0 rounded-2xl bg-muted object-cover" />
@@ -282,7 +282,7 @@ function AdminSheet({ products, onClose }: { products: Product[]; onClose: () =>
   const save = async () => {
     setBusy(true);
     try {
-      const prices = Object.entries(draft).map(([k, v]) => { const [product_id, size] = k.split("|"); return { product_id, size, price: Number(v) }; });
+      const prices = Object.entries(draft).map(([k, v]) => { const [product_id = "", size = ""] = k.split("|"); return { product_id, size, price: Number(v) }; });
       const res = await savePrices({ data: { password: pw, prices } });
       if (!res.ok) { toast.error("Wrong password"); return; }
       toast.success("Prices updated");
