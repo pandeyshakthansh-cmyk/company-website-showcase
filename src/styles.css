@@ -44,8 +44,8 @@
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-whatsapp: var(--whatsapp);
-  --font-display: "Poppins", sans-serif;
-  --font-sans: "Nunito Sans", sans-serif;
+  --font-display: "Fraunces", serif;
+  --font-sans: "Outfit", sans-serif;
   --shadow-soft: var(--shadow-soft);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -67,25 +67,25 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.975 0.015 145);
+  --background: oklch(0.975 0.018 85);
   --foreground: oklch(0.25 0.06 150);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.25 0.06 150);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.25 0.06 150);
-  --primary: oklch(0.42 0.12 148);
+  --primary: oklch(0.36 0.09 152);
   --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.6 0.16 135);
   --secondary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.95 0.025 145);
+  --muted: oklch(0.94 0.03 90);
   --muted-foreground: oklch(0.5 0.05 150);
-  --accent: oklch(0.45 0.09 50);
+  --accent: oklch(0.52 0.11 50);
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
   --whatsapp: oklch(0.72 0.17 150);
-  --border: oklch(0.88 0.05 145);
-  --input: oklch(0.88 0.05 145);
+  --border: oklch(0.88 0.03 85);
+  --input: oklch(0.88 0.03 85);
   --ring: oklch(0.6 0.12 148);
   --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--primary) 35%, transparent);
 }
